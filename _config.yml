@@ -20,7 +20,7 @@ title                    : "Will2world's Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "will2world"
-description              : "An amazing website."
+description              : ""
 url                      : will2world.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "will2world/will2world/will2world.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -93,11 +93,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "손준호"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  bio              : "한국해양대학교 컴퓨터 공학과 database lab"
+  location         : "부산광역시"
+  email            : junho751@naver.com
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
