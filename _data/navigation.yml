@@ -3,9 +3,9 @@ main:
   - title : "Archive"
     url: /month-archive/
   - title: "Category"
-    url: /categories/
+    url: /category/
   - title: "Tag"
-    url: /tags/
+    url: /tag/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
