@@ -1,15 +1,17 @@
 ---
 title: Github pages 포스팅에 이미지 넣는 방법
+toc: ture
+toc_sticky: ture
 categories:
 - github pages
 tags:
 - jekyll
 - image
 ---
-## 개요
+## 도입
 Github pages와 jekyll 포스팅에 이미지를 넣는 방식이 생각보다 까다로워 보인다. 블로그 서비스들에서 제공하는 편집기와 같은 기능없이 마크다운 레벨에서 이를 처리해야하기 때문이다. 구글링을 통해 알아낸 ~~필자 기준에서 가장 쉬운~~ 방식을 정리해본다.
 
-## jekyll에서 이미지 넣기
+## Jekyll에서 이미지 넣기
 이미지 크기를 별도로 조절하지 않는다면 다음과 같이 할 수 있다. 
 ```markdown
 ![내 사진](/assets/images/my_picture.jpg)
