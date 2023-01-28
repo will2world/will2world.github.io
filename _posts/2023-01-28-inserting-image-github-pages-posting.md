@@ -2,6 +2,7 @@
 title: Github pages 포스팅에 이미지 넣는 방법
 toc: true
 toc_sticky: true
+comments: true
 categories:
 - github pages
 tags:
