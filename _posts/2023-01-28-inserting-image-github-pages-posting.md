@@ -4,7 +4,7 @@ toc: true
 toc_sticky: true
 comments: true
 categories:
-- github pages
+- blog
 tags:
 - jekyll
 - image
