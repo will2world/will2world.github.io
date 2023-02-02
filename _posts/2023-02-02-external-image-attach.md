@@ -3,8 +3,9 @@ title: Github pages 이미지를 외부 서버에 두는 방법
 toc: true
 toc_sticky: true
 categories:
-- github pages
+- blog
 tags:
+- github pages
 - jekyll
 - image
 ---
