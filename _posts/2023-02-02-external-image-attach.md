@@ -18,7 +18,7 @@ tags:
 ## 구글 드라이브를 외부 저장소로 사용하기
 구글 계정만 있으면 무료로 15GB의 클라우드 저장소를 사용할 수 있다. 이 저장소를 블로그 포스팅에 사용할 이미지를 업로드하는 데 사용한다. 다음의 절차들은 구글 드라이브 desktop이 아닌 웹에서 수행해야 한다.
 ### Step 1 : 포스팅용 폴더 만들고 공유 설정하기
-이미지들은 모든 사람에게 공개가 되어야 하므로 별도의 폴더를 하나 만들어준다. 폴더를 만들었으면 이어서 해당 폴더를 `공유(share)`한다. 이때 빨간색 네모로 표시한 부분에서 처럼 모든 사람이 접근할 수 있도록 설정해줘야 한다. 그래야 이미지를 볼 수 있다.
+이미지들은 모든 사람에게 공개가 되어야 하므로 별도의 폴더를 하나 만들어준다. 폴더를 만들었으면 이어서 해당 폴더를 공유한다. 이때 빨간색 네모로 표시한 부분에서 처럼 모든 사람이 접근할 수 있도록 설정해줘야 한다. 그래야 이미지를 볼 수 있다.
 
 ![1](https://user-images.githubusercontent.com/53478216/216277146-6cccb853-eb25-49ea-bd10-6e9872353ef7.png)
 
@@ -45,25 +45,38 @@ https://drive.google.com/file/d/{이미지_ID}/view?usp=sharing
 Step 4에서 생성한 코드를 포스팅에 삽입하면 그림이 입력된다. 다음 그림은 본 방식을 사용해서 삽입한 이미지이다.
 ![sample](https://drive.google.com/uc?id=165CVowEUtn7-_KPn-7SaLkez6VlF5opp)
 
-### 평가
-별도의 드라이브에 이미지를 보관할 수 있단 점은 좋다. 그러나 삽입하는 이미지 수가 많아지면 굉장히 번거롭다. 자동화를 하면 편해질 것 같은데 구글 정책 상 공유 코드를 바로 긁어올 수 있을지 모르겠다. 
-일단 공유폴더 상 이미지 주소들은 수작업으로 따서 메모장에 가져오고 나머지 작업은 파이썬으로 스크립트를 짜봤다. 이렇게 쓰면서 전체 작업 스크립트를 만들어봐야겠다.
+### 파이썬으로 이미지 삽입 markdown 코드 생성 자동화 하기 
+구글 드라이브를 사용하는 방식은 굉장히 번거롭다.
+다행히 여러 파일을 동시에 선택하고 한번에 공유링크를 생성할 수 있는 drive용 앱[^앱이름]이 개발되어 있어 공유링크를 한번에 생성, 복사할 수 있다.
+물론 구글 드라이브 웹 자체에서 한번에 공유링크를 생성하는 기능도 있지만 이미지가 정렬되지 않은 상태로 링크들이 생성되므로 어떤 이미지의 링크인지 특정하기 어렵다. 그래서 불가피하게 drive용 앱을 사용하였다.
+
+![화면 캡처 2023-02-02 194310](https://user-images.githubusercontent.com/53478216/216303472-426d74eb-2df5-4d95-974d-5ab3a3450e63.png)
+
+![화면 캡처 2023-02-02 193807](https://user-images.githubusercontent.com/53478216/216302302-e35881ae-c261-4acf-aefd-4a8ffaaac131.png)
+
+다음의 코드는 각 이미지에 대한 md 코드를 생성하는 파이썬 스크립트이다. 복사한 공유링크를 txt 파일에 저장하고 다음의 파이썬 스크립트에 입력으로 주면 각 이미지에 대한 md 코드가 있는 txt 파일이 생성된다. 이들 각 줄의 md 코드를 포스팅의 원하는 위치에 삽입하면 된다.
 ```python
 import sys
 import os
-
 head = '![image](https://drive.google.com/uc?id='
 tail = ')'
-file = sys.argv[1]
 
+file = sys.argv[1]
 with open(file, 'r') as f:
-    links = f.readlines()
+    links = f.readlines()
+
 with open('image_md_codes.txt', 'w') as f:
-    for link in links:
-        key = link.split('/')[5]
-        embedMdCode = head + key + tail
-        print(embedMdCode, file=f)
+    for link in links:
+        key = link.split('/')[5]
+        embedLink = head + key + tail
+        print(embedLink, file=f)
 ```
+
+입력과 출력 txt 파일은 다음과 같은 형태를 가지고 있다.
+
+![input](https://user-images.githubusercontent.com/53478216/216304034-ba846cd7-26f0-4c44-a66d-51007178a824.png)
+
+![output](https://user-images.githubusercontent.com/53478216/216304054-c4e1b6c7-443d-4b36-b4db-a26009bdba91.png)
 
 
 ## 원드라이브를 외부 저장소로 사용하기
@@ -74,3 +87,4 @@ with open('image_md_codes.txt', 'w') as f:
 [^1]: `/assets/images/image_name.jpg`와 같은 상대주소를 사용하였다.
 [^2]: 최대 5GB까지는 허용한다고 되어있으며(2023년 정책 기준) 초과 시 경고 메일을 받을 수 있다고 한다.
 [^3]: 혹시 개인 이미지 서버를 운용하고 있다면 개인 서버에 이미지를 업로드하고 그 절대주소를 이미지 삽입에 활용하면 될 것 같다.
+[^앱이름]: Bulk share url shortener를 사용하였다.
