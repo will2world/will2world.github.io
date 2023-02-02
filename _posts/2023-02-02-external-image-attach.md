@@ -21,22 +21,21 @@ tags:
 ### Step 1 : 포스팅용 폴더 만들고 공유 설정하기
 이미지들은 모든 사람에게 공개가 되어야 하므로 별도의 폴더를 하나 만들어준다. 폴더를 만들었으면 이어서 해당 폴더를 공유한다. 이때 빨간색 네모로 표시한 부분에서 처럼 모든 사람이 접근할 수 있도록 설정해줘야 한다. 그래야 이미지를 볼 수 있다.
 
-![1](https://user-images.githubusercontent.com/53478216/216277146-6cccb853-eb25-49ea-bd10-6e9872353ef7.png)
-
 ![2](https://user-images.githubusercontent.com/53478216/216277831-8251c096-1abf-4dd9-a594-a7a09cff527b.png)
 ### Step 2 : 이미지 업로드하기
 이미지 폴더에 포스팅할 이미지 파일을 업로드한다. 필자는 `sample.jpg`라는 파일을 업로드 하였다.
 
-![3](https://user-images.githubusercontent.com/53478216/216278322-b8464c81-bd15-4da1-a2e9-5fe1f82ecf4a.png)
+![3](https://user-images.githubusercontent.com/53478216/216278322-b8464c81-bd15-4da1-a2e9-5fe1f82ecf4a.png){: width="50%"}
 ### Step 3 : 업로드한 이미지의 share 주소 중 이미지 ID 알아내기
 업로드한 이미지를 우클릭하여 `공유`를 선택한다. 그러면 그림과 같은 창이 뜨며 그 중 빨간색 네모로 표시한 부분의 버튼을 누르면 공유 주소가 복사가 된다.
+
 ![4](https://user-images.githubusercontent.com/53478216/216279761-f76f8d9e-1dc5-455c-8837-726c2516cef6.png)
 
-공유 주소는 다음과 같은 형태를 가지고 있다.
+공유 주소는 다음과 같은 형태를 가지고 있다. 공유 주소 중 `이미지 ID`만 복사해둔다.
 ```
 https://drive.google.com/file/d/{이미지_ID}/view?usp=sharing
 ```
-공유 주소 중 `이미지 ID`만 복사해둔다.
+
 ### Step 4 : 이미지 ID로부터 이미지 삽입용 주소 만들기
 다음과 같은 형태로 이미지 삽입을 위한 코드를 만들어준다. 다음의 마크다운 코드에서 `{이미지_ID}`를 제거하고 앞서 복사해둔 이미지 ID를 넣어준다.
 ```markdown
@@ -44,18 +43,20 @@ https://drive.google.com/file/d/{이미지_ID}/view?usp=sharing
 ```
 ### Step 5 : 포스팅 md 파일에 삽입하기
 Step 4에서 생성한 코드를 포스팅에 삽입하면 그림이 입력된다. 다음 그림은 본 방식을 사용해서 삽입한 이미지이다.
-![sample](https://drive.google.com/uc?id=165CVowEUtn7-_KPn-7SaLkez6VlF5opp)
 
-### 파이썬으로 이미지 삽입 markdown 코드 생성 자동화 하기 
+![image](https://drive.google.com/uc?id=1VM9ljPWkttQjW6RG4zTVE6hODDjo8FnS)
+
+### 번외 : 파이썬으로 이미지 삽입 markdown 코드 생성 자동화 하기 
 구글 드라이브를 사용하는 방식은 굉장히 번거롭다.
 다행히 여러 파일을 동시에 선택하고 한번에 공유링크를 생성할 수 있는 drive용 앱[^4]이 개발되어 있어 공유링크를 한번에 생성, 복사할 수 있다.
-물론 구글 드라이브 웹 자체에서 한번에 공유링크를 생성하는 기능도 있지만 이미지가 정렬되지 않은 상태로 링크들이 생성되므로 어떤 이미지의 링크인지 특정하기 어렵다. 그래서 불가피하게 drive용 앱을 사용하였다.
+
+구글 드라이브 웹 자체에서도 한번에 공유링크를 생성하는 기능도 있지만 이미지가 정렬되지 않은 상태로 링크들이 생성되므로 어떤 이미지의 링크인지 특정하기 어렵다. 그래서 불가피하게 drive용 앱을 사용하였다.
 
 ![화면 캡처 2023-02-02 194310](https://user-images.githubusercontent.com/53478216/216303472-426d74eb-2df5-4d95-974d-5ab3a3450e63.png)
 
 ![화면 캡처 2023-02-02 193807](https://user-images.githubusercontent.com/53478216/216302302-e35881ae-c261-4acf-aefd-4a8ffaaac131.png)
 
-다음의 코드는 각 이미지에 대한 md 코드를 생성하는 파이썬 스크립트이다. 복사한 공유링크를 txt 파일에 저장하고 다음의 파이썬 스크립트에 입력으로 주면 각 이미지에 대한 md 코드가 있는 txt 파일이 생성된다. 이들 각 줄의 md 코드를 포스팅의 원하는 위치에 삽입하면 된다.
+다음의 코드는 각 이미지에 대한 md 코드를 생성하는 파이썬 스크립트이다. 복사한 공유링크를 txt 파일에 저장하고 다음의 파이썬 스크립트에 입력으로 주면 각 이미지에 대한 md 코드가 있는 txt 파일이 생성된다. 출력 txt 파일 각 줄의 md 코드를 포스팅의 원하는 위치에 삽입하면 된다.
 ```python
 import sys
 import os
@@ -73,7 +74,7 @@ with open('image_md_codes.txt', 'w') as f:
         print(embedLink, file=f)
 ```
 
-입력과 출력 txt 파일은 다음과 같은 형태를 가지고 있다.
+해당 스크립트의 입력, 출력 파일은 다음의 그림과 같다.
 
 ![input](https://user-images.githubusercontent.com/53478216/216304034-ba846cd7-26f0-4c44-a66d-51007178a824.png)
 
