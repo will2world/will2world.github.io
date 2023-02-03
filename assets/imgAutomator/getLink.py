@@ -3,23 +3,22 @@ if __name__ == "__main__":
     head = '!['
     middle = '](https://drive.google.com/uc?id='
     tail = ')'
-    file = './input.txt'
 
-    names = ['백야', 10, 11, 5,6,7,8,9,1,2,3,4]
+    file = './input.txt'
+    names = ['reesult_withname'] # bulk share url shortener에 입력된 순서대로 기입
     names = list(map(str, names))
     with open(file, 'r') as f:
         links = f.readlines()
 
-    result = dict()
+    result = []
     for name, link in zip(names, links):
         id = link.split('/')[5]
         embedLink = head + name + middle + id + tail
-        result[name] = embedLink
-    result = dict(sorted(result.items()))
+        result.append(embedLink)
+    result.sort()
 
-    with open('output.txt', 'w', encoding='UTF-8') as f:
-        onlyValues = list(result.values())
-        onlyValues.sort()
-        for value in onlyValues:
-            print(value, file=f)
+    with open('image_md_codes_with_name.txt', 'w', encoding='UTF-8') as f:
+        for mdCode in result:
+            print(mdCode, file=f)
+
 # %%
