@@ -94,7 +94,7 @@ python --version
 ```
 이들 모두가 정상적으로 확인된다면 설치가 잘 된 것이다.
 
-![4.4](https://drive.google.com/uc?id=1mKytUr-Eo4Zh62wjT9ZgPYNRRbyGpkaH)
+[![4.4](https://drive.google.com/uc?id=1mKytUr-Eo4Zh62wjT9ZgPYNRRbyGpkaH)](https://drive.google.com/uc?id=1mKytUr-Eo4Zh62wjT9ZgPYNRRbyGpkaH)
 
 
 ### Step 3 : IDE 설치 - VS code
@@ -150,7 +150,7 @@ VS code의 파이썬 Extension을 기본적으로 Jupyter notebook과 같이 사
 ##### 정석(Command line 방식)으로 코드 실행하기
 작성한 스크립트 파일을 Command line 환경에서 사용할 예정이라면 정석으로 py 스크립트 파일을 실행해 볼 필요가 있다. 이 때는 VS code 메뉴의 `Run-Start Debugging` 혹은 `Run-Run Without Debugging`을 활용한다. 이를 누르면 다음의 그림과 같이 VS code창 하단의 Terminal에서 전체코드(.py파일 자체)가 실행되는 것을 볼 수 있다.
 
-![12](https://drive.google.com/uc?id=1Q7yrBC7H9jSJzKVYFCP36NLQugWXZ4SV)
+[![12](https://drive.google.com/uc?id=1Q7yrBC7H9jSJzKVYFCP36NLQugWXZ4SV)](https://drive.google.com/uc?id=1Q7yrBC7H9jSJzKVYFCP36NLQugWXZ4SV){:target="_blank"}
 
 이는 Anaconda prompt(terminal)에 다음의 명령어를 수행한 것과 동일하다. 단, 이 방식은 `Run Without Debugging`과 같이 실행만 한다.
 ```sh
