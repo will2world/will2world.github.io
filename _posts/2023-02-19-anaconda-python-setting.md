@@ -116,13 +116,13 @@ VS code는 막 설치된 상태에서는 그냥 메모장과 같은 상태이다
 
 설치가 끝나면 아래 그림처럼 나타난다.
 
-![7.2](https://drive.google.com/uc?id=1CLqInon4F3MHSvOcWDqC22hesqe9_x-u)
+[![7.2](https://drive.google.com/uc?id=1CLqInon4F3MHSvOcWDqC22hesqe9_x-u)](https://drive.google.com/uc?id=1CLqInon4F3MHSvOcWDqC22hesqe9_x-u){:target="_blank"}
 
 #### Python Interpreter 선택하기
 한 PC에 여러 버전의 파이썬이 존재할 수 있다. 예를들어 가상환경을 5개 구축해서 각각 다른 프로젝트의 코딩을 진행하고 있다면 각 가상환경별로 각기 다른 버전의 파이썬이 설치되어 있을 수 있다.
 그러나 VS code는 한 개만 설치된다. 그래서 VS code는 여러 개의 파이썬 중 원하는 것을 선택하고 코딩할 수 있도록 해준다. 그림에 빨간색 박스로 표시된 `interpreter select 버튼`을 누르면 현재 사용 가능한(설치된) 파이썬 Interpreter들이 나오고 그들 중 원하는 것을 선택할 수 있다. (현재는 Anaconda에 설치된 'base' 한 개의 파이썬만 존재하므로 한 개만 표시되고 있다.)
 
-![8](https://drive.google.com/uc?id=1s7eXArLYuDLa18DYrkiFgEOPrtlri4GQ)
+[![8](https://drive.google.com/uc?id=1s7eXArLYuDLa18DYrkiFgEOPrtlri4GQ)](https://drive.google.com/uc?id=1s7eXArLYuDLa18DYrkiFgEOPrtlri4GQ){:target="_blank"}
 
 #### Working directory 선택하기
 특정 프로젝트의 코드들을 저장할 폴더를 생성하고 해당 폴더를 Working directory로 설정한다. 그럼 왼쪽 Explorer 탭에 해당 폴더가 표시되는 것을 볼 수 있다. author 관련한 창이 뜨면 `Yes, I trust the authors`를 눌러준다.
@@ -145,7 +145,7 @@ VS code의 파이썬 Extension을 기본적으로 Jupyter notebook과 같이 사
 
 실제 작성된 코드 셀을 실행하면 다음처럼 Interactive 창이 생기면서 실행된 결과가 출력된다.
 
-![10](https://drive.google.com/uc?id=1asr87PaqE8PAq4TyznmBjnFPwTcNFp50)
+[![10](https://drive.google.com/uc?id=1asr87PaqE8PAq4TyznmBjnFPwTcNFp50)](https://drive.google.com/uc?id=1asr87PaqE8PAq4TyznmBjnFPwTcNFp50){:target="_blank"}
 
 ##### 정석(Command line 방식)으로 코드 실행하기
 작성한 스크립트 파일을 Command line 환경에서 사용할 예정이라면 정석으로 py 스크립트 파일을 실행해 볼 필요가 있다. 이 때는 VS code 메뉴의 `Run-Start Debugging` 혹은 `Run-Run Without Debugging`을 활용한다. 이를 누르면 다음의 그림과 같이 VS code창 하단의 Terminal에서 전체코드(.py파일 자체)가 실행되는 것을 볼 수 있다.
