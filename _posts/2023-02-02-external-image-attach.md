@@ -108,6 +108,7 @@ with open('image_md_codes_with_name.txt', 'w', encoding='UTF-8') as f:
 ## Github issue 이미지 첨부 활용하기
 작성 중
 
+---
 [^1]: `/assets/images/image_name.jpg`와 같은 상대주소를 사용하였다.
 [^2]: 최대 5GB까지는 허용한다고 되어있으며(2023년 정책 기준) 초과 시 경고 메일을 받을 수 있다고 한다. 자세한 내용은 [용량 관련 stackoverflow](https://stackoverflow.com/questions/38768454/repository-size-limits-for-github-com)와 [github 공식문서](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#repository-size-limits)에서 확인할 수 있다.
 [^4]: `Bulk share url shortener`를 사용하였다.
