@@ -94,7 +94,7 @@ python --version
 ```
 이들 모두가 정상적으로 확인된다면 설치가 잘 된 것이다.
 
-[![4.4](https://drive.google.com/uc?id=1mKytUr-Eo4Zh62wjT9ZgPYNRRbyGpkaH)](https://drive.google.com/uc?id=1mKytUr-Eo4Zh62wjT9ZgPYNRRbyGpkaH)
+[![4.4](https://drive.google.com/uc?id=1mKytUr-Eo4Zh62wjT9ZgPYNRRbyGpkaH)](https://drive.google.com/uc?id=1mKytUr-Eo4Zh62wjT9ZgPYNRRbyGpkaH){:target="_blank"}
 
 
 ### Step 3 : IDE 설치 - VS code
