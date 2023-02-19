@@ -5,7 +5,7 @@ if __name__ == "__main__":
     tail = ')'
 
     file = './input.txt'
-    names = ['reesult_withname'] # bulk share url shortener에 입력된 순서대로 기입
+    names = [1, 2, 3.1, 3.2, 4.1, 4.2, 4.3, 4.4, 5, 6, 7.1, 7.2, 8, 9.11, 9.1, 9.2, 10, 11, 12] # bulk share url shortener에 입력된 순서대로 기입
     names = list(map(str, names))
     with open(file, 'r') as f:
         links = f.readlines()
