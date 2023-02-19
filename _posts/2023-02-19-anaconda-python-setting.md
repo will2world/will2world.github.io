@@ -2,7 +2,6 @@
 title: 파이썬 코딩 환경 설정하기 (입문자를 위한 순한맛)
 toc: true
 toc_sticky: true
-mathjax: true
 categories:
 - coding
 tags:
@@ -11,7 +10,7 @@ tags:
 ## 도입
 코딩과 인공지능에 대한 인기가 높아지면서 많은 사람들이 파이썬을 찾는 것 같다. 아마 그들 중 대다수는 코딩을 처음 접하기 때문에 코딩환경 설정에 어려움을 겪지 않을까 싶다. 그래서 설치에 필요한 기본 개념들을 간단하게 설명하고, 설치 과정을 차근차근 설명해보고자 한다.
 
-~~개념은 머리아프니까 스킵하고~~ 코딩 환경 설정 방법만 알고싶다면 `파이썬 코딩환경 설정방식 두 가지`부터 읽으면 된다.
+~~개념은 머리아프니까 스킵하고~~ 코딩 환경 설정 방법만 알고싶다면 [파이썬 코딩환경을 설정하는 두 가지 방식](#파이썬-코딩환경을-설정하는-두-가지-방식)부터 읽으면 된다.
 
 ## 기본 개념
 ### 가상환경(Virtual environment)
@@ -32,7 +31,7 @@ tags:
 conda로 환경을 설치했다면, 대부분의 패키지는 conda를 통해 설치할 수 있으나 어떤 패키지는 pip로만 설치되는 경우도 있긴하다. (그래서 결국 둘 모두의 사용법에 익숙해진다.)
 
 ### Conda vs. Miniconda vs. Anaconda
-공통적으로 conda를 가지며 여기에 필요하다고 생각되는 package들을 붙여서 만든 것이 Miniconda와 Anaconda라고 보면된다.
+공통적으로 conda를 가지며 여기에 필요하다고 생각되는 package들을 붙여서 만든 것이 Miniconda와 Anaconda라고 보면된다. 그 포함관계는 다음과 같다.
 
 $$ Conda \subset Miniconda \subset Anaconda $$
 
@@ -45,18 +44,20 @@ $$ Conda \subset Miniconda \subset Anaconda $$
 3. Spyder
 4. Jupyter
 
-이들 중 원하는 것을 선택하고 설치한 뒤 사용하면 된다. 설치는 각각의 프로그램 홈페이지의 설치 절차를 따라가면 된다. 필자는 이들 중 Visual Studio Code를 메인으로 사용하고 있다.
+이들 중 원하는 것을 선택하고 설치한 뒤 사용하면 된다. 설치는 각각의 프로그램 홈페이지의 설치 절차를 따라가면 된다. 필자는 이들 중 VS code를 메인으로 사용하고 있다.
 
 이들 중 무엇을 써야할 지 모르겠다면 VS code를 추천한다. 처음에 설정하는게 조금 까다롭지만 시간이 지나 돌아보면(여러 개의 가상환경을 갖추고 코딩을 하게 되고, 서버컴퓨터에 원격으로 연결하여 코딩, 디버깅하는 때가 오면) 굉장히 잘한 선택이라고 생각하게 된다.
 
-## 파이썬 코딩환경 설정방식 두 가지
+## 파이썬 코딩환경을 설정하는 두 가지 방식
 파이썬 코딩환경을 설정하는 방식은 크게 두 가지다.
 1. 직접 python을 설치한 뒤 pip로 필요한 패키지를 설치하는 방식
 2. Anaconda(혹은 miniconda)를 통해 python을 설치하는 방식
 
 `1번 방식`은 파이썬을 설치하고 필요한 패지키들은 pip를 통해 하나씩 설치하는 방식이다. Anaconda나 Miniconda와 달리 기본 패키지들을 한번에 설치해주지 않으므로 하나씩 설치해주어야 한다. 또한 Command line에서 사용할 수 있도록 환경변수를 직접 설정해주어야 한다. 필요한 것들만 추려서 설치할 수 있겠으나 파이썬 코딩환경 설정이 처음이라면 어려운 방식이라 추천하지 않는다.
 
-`2번 방식`은 Anaconda를 설치함으로써 python 뿐만 아니라 기본적으로 많이 사용되는 패키지들까지 한번에 설치하는 방식이다. 이후 conda를 통해 원하는 패키지를 추가로 설치해주면 된다. 파이썬 코딩환경 설정이 처음이라면 2번 방식을 추천한다.
+`2번 방식`은 Anaconda를 설치함으로써 python 뿐만 아니라 기본적으로 많이 사용되는 패키지들까지 한번에 설치하는 방식이다. 이후 conda를 통해 원하는 패키지를 추가로 설치해주면 된다.
+
+파이썬 코딩환경 설정이 처음이라면 2번 방식을 추천한다.
 
 ## 파이썬 코딩환경 설정 - 2번 방식
 앞서 설명한 두 가지 방식 중 좀 더 쉬운 2번 방식을 통해 파이썬 코딩환경을 설정하는 방식에 대해 설명한다.
@@ -98,6 +99,7 @@ python --version
 
 ### Step 3. IDE 설치 - VS code
 Anaconda 혹은 Miniconda가 설치되었으면 이어서 원하는 IDE를 설치한다. 해당 IDE의 공식홈페이지의 설치 가이드를 따라 설치할 수 있다. 본 포스팅에서는 VS code를 기준으로 설명한다. VS code의 공식 다운로드 페이지는 다음과 같다.
+
 - [VS code 공식 다운로드 페이지](https://code.visualstudio.com/)
 
 ![5](https://drive.google.com/uc?id=1nkWlbJZqtxVoj_Ipc1p7eIGXVkx72tU8)
@@ -118,12 +120,12 @@ VS code는 막 설치된 상태에서는 그냥 메모장과 같은 상태이다
 
 #### Python Interpreter 선택하기
 한 PC에 여러 버전의 파이썬이 존재할 수 있다. 예를들어 가상환경을 5개 구축해서 각각 다른 프로젝트의 코딩을 진행하고 있다면 각 가상환경별로 각기 다른 버전의 파이썬이 설치되어 있을 수 있다.
-그러나 VS code는 한 개만 설치된다. 그래서 VS code는 여러 개의 파이썬 중 원하는 것을 선택하고 코딩할 수 있도록 해준다. 그림에 빨간색 박스로 표시된 `interpreter select 버튼`을 누르면 현재 사용 가능한(설치된) 파이썬들이 나오고 그들 중 원하는 것을 선택할 수 있다. (현재는 Anaconda에 설치된 'base' 한 개의 파이썬만 존재하므로 한 개만 표시되고 있다.)
+그러나 VS code는 한 개만 설치된다. 그래서 VS code는 여러 개의 파이썬 중 원하는 것을 선택하고 코딩할 수 있도록 해준다. 그림에 빨간색 박스로 표시된 `interpreter select 버튼`을 누르면 현재 사용 가능한(설치된) 파이썬 Interpreter들이 나오고 그들 중 원하는 것을 선택할 수 있다. (현재는 Anaconda에 설치된 'base' 한 개의 파이썬만 존재하므로 한 개만 표시되고 있다.)
 
 ![8](https://drive.google.com/uc?id=1s7eXArLYuDLa18DYrkiFgEOPrtlri4GQ)
 
 #### Working directory 선택하기
-특정 프로젝트의 코드들을 저장할 폴더를 생성하고 해당 폴더를 Working directory로 설정한다. 그럼 왼쪽 Explorer 탭에 해당 폴더가 표시되는 것을 볼 수 있다. author 관련 오류가 뜨면 `Yes, I trust the authors`를 눌러준다.
+특정 프로젝트의 코드들을 저장할 폴더를 생성하고 해당 폴더를 Working directory로 설정한다. 그럼 왼쪽 Explorer 탭에 해당 폴더가 표시되는 것을 볼 수 있다. author 관련한 창이 뜨면 `Yes, I trust the authors`를 눌러준다.
 
 ![9.1](https://drive.google.com/uc?id=1ivGITpP3e_-y-PCwykLtYbyKFjioEDEh)
 
@@ -131,27 +133,35 @@ VS code는 막 설치된 상태에서는 그냥 메모장과 같은 상태이다
 
 ### Step 5. 코드 작성하고 실행하기
 #### Code 파일 생성하고 작성하기
-Explorer 탭에서 우클릭을 하면 새 파일을 생성할 수 있다. 원하는 이름으로 파일을 생성하되 확장자로 `.py`를 붙여준다.[^3] 그러면 파이썬 스크립트 파일이 생성된다. 해당 스크립트에 원하는 코드를 작성하면 된다. 다음은 Hello world 코드를 작성한 사례이다.
-
-![10](https://drive.google.com/uc?id=1asr87PaqE8PAq4TyznmBjnFPwTcNFp50)
-
+Explorer 탭에서 우클릭을 하면 새 파일을 생성할 수 있다. 원하는 이름으로 파일을 생성하되 확장자로 `.py`를 붙여준다.[^3] 그러면 파이썬 스크립트 파일이 생성된다. 해당 스크립트에 원하는 코드를 작성하면 된다.
 
 #### 코드 실행하기
 ##### Jupyter Notebook 방식으로 (cell 단위로) 코드 실행하기
 VS code의 파이썬 Extension을 기본적으로 Jupyter notebook과 같이 사용할 수 있다. 원래 Jupyter notebook은 Jupyter 서버를 켜고 크롬 등을 통해 해당 서버에 접속하여 코딩을 해야 한다. 그러나 VS code에서는 Jupyter extension이 알아서 이 작업을 수행하므로 우리는 이를 신경쓰지 않아도 된다. 단지 Jupyter notebook 코드 cell을 만들고 각 cell 단위로 코드를 작성, 실행하기만 하면 된다.
-코드 cell은 `#%%`를 입력함으로써 생성할 수 있다. 생성된 cell 상단에는 `Run cell`, `Run below`, `Debug cell`이라는 버튼이 생긴다. 여기에 코드를 작성하고 `Run cell`을 눌러 코드를 실행하면 셀 단위로 코드를 실행해볼 수 있다.
+
+코드 cell은 `#%%`를 입력함으로써 생성할 수 있다. 생성된 cell 상단에는 `Run cell`, `Run below`, `Debug cell`이라는 버튼이 생긴다. 여기에 코드를 작성하고 `Run cell`을 눌러(혹은, 해당 셀에 커서를 두고 `Ehift+Enter`를 눌러) 셀 단위의 코드를 실행해볼 수 있다.
 
 ![11](https://drive.google.com/uc?id=1j_X-UJQC4p2wf_Ay-ttP3dA2GcZ_fnP_)
 
+실제 작성된 코드 셀을 실행하면 다음처럼 Interactive 창이 생기면서 실행된 결과가 출력된다.
+
+![10](https://drive.google.com/uc?id=1asr87PaqE8PAq4TyznmBjnFPwTcNFp50)
+
 ##### 정석(Command line 방식)으로 코드 실행하기
-현재 작성한 스크립트 파일이 command line 환경에서 사용될 예정이라면 정석으로 코드를 실행해볼 필요가 있다. 이 때는 VS code 메뉴의 `Run-Start Debugging` 혹은 `Run-Run Without Debugging`을 활용한다. 이를 누르면 하단의 terminal에서 전체코드(.py파일)가 실행되는 것을 볼 수 있다.
+작성한 스크립트 파일을 Command line 환경에서 사용할 예정이라면 정석으로 py 스크립트 파일을 실행해 볼 필요가 있다. 이 때는 VS code 메뉴의 `Run-Start Debugging` 혹은 `Run-Run Without Debugging`을 활용한다. 이를 누르면 다음의 그림과 같이 VS code창 하단의 Terminal에서 전체코드(.py파일 자체)가 실행되는 것을 볼 수 있다.
 
 ![12](https://drive.google.com/uc?id=1Q7yrBC7H9jSJzKVYFCP36NLQugWXZ4SV)
 
+이는 Anaconda prompt(terminal)에 다음의 명령어를 수행한 것과 동일하다. 단, 이 방식은 `Run Without Debugging`과 같이 실행만 한다.
+```sh
+python ~/workingDir/helloWorld.py
+```
 
 ## 마치며
-파이썬 코딩환경 설정과 관련한 기본 개념들을 정리하고 코딩환경을 설정하는 방식에 대해 설명하였다. 이후 포스팅은 아마 `Conda에 대한 기초 사용법`과 `가상환경을 다루는 방법`이 되지 않을까 싶다.
+파이썬 코딩환경 설정과 관련한 기본 개념들을 정리하고 코딩환경을 설정하는 방식에 대해 설명하였다. 최대한 자세히 풀어서 설명한 것 같다.
+이후 포스팅은 아마 `Conda에 대한 기초 사용법`과 `가상환경을 다루는 방법`이 되지 않을까 싶다.
 
-[^1]: 정확히 말하면 conda는 `패키지 관리 프로그램 + 환경 관리 프로그램`이다.
+---
+[^1]: 정확히 말하면 conda는 `패키지 관리자 + 환경 관리 프로그램`이다.
 [^ide_ranking]:  이외에도 더 다양한 종류의 IDE가 있다. 궁금하면 [12 Best Python IDE](https://www.softwaretestinghelp.com/python-ide-code-editors/)를 참조하면 된다.
 [^3]: 확장자를 `.ipynb`로 지정하여 주피터 노트북 스크립트를 생성하면 Jupyter notebook과 완전히 동일한 환경에서 코딩하는 것이 가능하다. 그러나 `.py`로 생성해도 Jupyer notebook의 기능을 동일하게 사용할 수 있으므로 굳이 `.ipynb`로 생성할 필요는 없어보인다.
