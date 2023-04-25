@@ -15,7 +15,7 @@
 minimal_mistakes_skin    : "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en"
+locale                   : "en-US"
 title                    : "Will's logbook"
 title_separator          : "|"
 subtitle                 : Penetrate the essence # site tagline that appears below site title in masthead
