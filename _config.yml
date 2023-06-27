@@ -108,7 +108,7 @@ author:
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Researcher, data science enthusiast"
   location         : "Busan, South Korea"
-  email            : junho751@naver.com
+  email            : jhson@duck.com
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
