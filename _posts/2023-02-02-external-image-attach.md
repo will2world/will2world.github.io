@@ -107,12 +107,12 @@ with open('image_md_codes_with_name.txt', 'w', encoding='UTF-8') as f:
 
 # 원드라이브를 외부 저장소로 사용하기
 ## Step 1 : 포스팅 폴더 생성 후 이미지 업로드하기
-먼저 원드라이브의 원하는 위치에 포스팅에 사용할 이미지들을 담을 폴더를 생성하고 이미지를 업로드한다. 다음의 그림에서와 같이 포스트별로 이미지 폴더를 따로 관리하는 편이 관리 면에서 좋을 것이라 생각된다.
+먼저 원드라이브의 원하는 위치에 포스팅에 사용할 이미지들을 담을 폴더를 생성하고 이미지를 업로드한다. 이떄 포스트별로 이미지 폴더를 따로 관리하는 편이 관리 면에서 좋을 것 같다.
 
 <img src="https://onedrive.live.com/embed?resid=CFD7A556C71EAC85%211966&authkey=%21AFvdoSZD6WypNlM&width=592&height=316" width="592" height="316" />
 
 ## Step 2 : 각 이미지 임베드 코드 따기
-이미지를 우클릭하면 메뉴에 다음의 그림에서와 같이 `임베드` 버튼이 보인다.
+이미지를 우클릭하면 메뉴에 `임베드` 버튼이 보인다. 이를 클릭하면 임베드 메뉴가 페이지 우측에 나타난다.
 
 <img src="https://onedrive.live.com/embed?resid=CFD7A556C71EAC85%211967&authkey=%21ALSqLr-3n2QWsg0&width=360&height=667" width="360" height="667" />
 
@@ -121,7 +121,7 @@ with open('image_md_codes_with_name.txt', 'w', encoding='UTF-8') as f:
 <img src="https://onedrive.live.com/embed?resid=CFD7A556C71EAC85%211968&authkey=%21AEhyG9G8CLTPZds&width=325&height=655" width="325" height="655" />
 
 ## Step 3 : 포스팅 md 파일에 삽입하기
-복사한 이미지 임베드 URL을 포스팅 md 파일의 원하는 위치에 다음의 그림과 같이 삽입한다. 그 결과 포스팅에 이미지가 출력되는 것을 확인할 수 있다.
+복사한 이미지 임베드 URL을 포스팅 md 파일의 원하는 위치에 삽입한다. 그 결과 블로그 포스팅에 이미지가 출력된다.
 
 <img src="https://onedrive.live.com/embed?resid=CFD7A556C71EAC85%211969&authkey=%21AAetjoEzYIoNNQ0&width=820&height=130" width="820" height="130" />
 
