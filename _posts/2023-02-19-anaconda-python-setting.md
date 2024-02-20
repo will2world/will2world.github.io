@@ -1,5 +1,5 @@
 ---
-title: 파이썬 코딩 환경 설정하기 (입문자를 위한 순한맛)
+title: 파이썬 코딩 환경 설정하기
 toc: true
 toc_sticky: true
 categories:

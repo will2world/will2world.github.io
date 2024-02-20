@@ -14,9 +14,12 @@ tags:
 1. 이미지는 blog repository의 용량을 사용한다. 그런데 Github 정책 상 무료 repository는 1GB[^2]로 용량이 제한된다. 따라서 포스팅에 이미지를 많이 사용하기가 부담스럽다.
 2. 이미지를 일일이 업로드하고 각각에 대한 상대주소를 만들어서 포스팅 md 파일에 입력해줘야 한다. 그래서 귀찮고 번거롭다.
 
-이런 한계는 장기적으로 보았을 때 문제가 될 수 있을 듯 하다. 특히나 이미지 용량이 크다면 1번이 치명적이다. 다행히 구글링을 통해 외부 저장소에 이미지를 업로드하고 블로그에 연동할 수 있는 세 가지 방식을 알게 되었다. 세 가지 모두 별도의 비용을 지불할 필요없이 활용할 수 있는 방식이다.
+이런 한계는 장기적으로 보았을 때 문제가 될 수 있을 듯 하다. 특히나 이미지 용량이 크다면 1번이 치명적이다. 다행히 구글링을 통해 외부 저장소에 이미지를 업로드하고 블로그에 연동할 수 있는 세 가지 방식을 알게 되었다. 세 가지 모두 별도의 비용을 지불할 필요없이 활용할 수 있는 방식이다. 그 세가지 방식은 다음과 같다.
+1. 구글 드라이브를 외부 저장소로 사용하기[^google]
+2. 원드라이브를 외부 저장소로 사용하기
+3. Github issue 이미지 첨부 활용하기
 
-# 구글 드라이브를 외부 저장소로 사용하기
+# ~~구글 드라이브를 외부 저장소로 사용하기~~
 구글은 각 계정별로 15GB의 클라우드 저장소를 무료로 제공한다. 이를 블로그 포스팅에 사용할 이미지를 업로드하는 데 사용한다. 다음의 절차들은 구글 드라이브 desktop이 아닌 웹에서 수행해야 한다.
 ## Step 1 : 포스팅용 폴더 만들고 공유 설정하기
 이미지들은 모든 사람에게 공개가 되어야 하므로 별도의 폴더를 하나 만들어준다. 폴더를 만들었으면 이어서 해당 폴더를 공유한다. 이때 빨간색 네모로 표시한 부분에서 처럼 모든 사람이 접근할 수 있도록 설정해줘야 한다. 그래야 모든 사람이 이미지를 볼 수 있다.
@@ -44,7 +47,7 @@ https://drive.google.com/file/d/{이미지_ID}/view?usp=sharing
 ## Step 5 : 포스팅 md 파일에 삽입하기
 Step 4에서 생성한 코드를 포스팅에 삽입하면 그림이 입력된다. 다음 그림은 본 방식을 사용해서 삽입한 이미지이다.
 
-![image](https://drive.google.com/uc?id=1VM9ljPWkttQjW6RG4zTVE6hODDjo8FnS)
+<img src="https://onedrive.live.com/embed?resid=CFD7A556C71EAC85%211945&authkey=%21ANebV7MGhzw40D4&width=960&height=720" width="960" height="auto" />
 
 ## 번외 : 파이썬으로 이미지 삽입 markdown 코드 생성 자동화 하기 
 Step 1-5를 전부 수작업으로 하는 것은 굉장히 번거롭다. (이렇게 써야한다면 그냥 안쓰고 싶을 정도이다.)
@@ -100,11 +103,28 @@ with open('image_md_codes_with_name.txt', 'w', encoding='UTF-8') as f:
 
 ![output](https://user-images.githubusercontent.com/53478216/216304054-c4e1b6c7-443d-4b36-b4db-a26009bdba91.png)
 
-![reesult_withname](https://drive.google.com/uc?id=1IjExj6KgHAIMdVqn8382_0U_DNtUhq5U)
-
+<img src="https://onedrive.live.com/embed?resid=CFD7A556C71EAC85%211944&authkey=%21AFgTxPVj6R-np2Q&width=627&height=289" width="627" height="auto" />
 
 # 원드라이브를 외부 저장소로 사용하기
-작성 중
+## Step 1 : 포스팅 폴더 생성 후 이미지 업로드하기
+먼저 원드라이브의 원하는 위치에 포스팅에 사용할 이미지들을 담을 폴더를 생성하고 이미지를 업로드한다. 다음의 그림에서와 같이 포스트별로 이미지 폴더를 따로 관리하는 편이 관리 면에서 좋을 것이라 생각된다.
+
+<img src="https://onedrive.live.com/embed?resid=CFD7A556C71EAC85%211966&authkey=%21AFvdoSZD6WypNlM&width=592&height=316" width="592" height="316" />
+
+## Step 2 : 각 이미지 임베드 코드 따기
+이미지를 우클릭하면 메뉴에 다음의 그림에서와 같이 `임베드` 버튼이 보인다.
+
+<img src="https://onedrive.live.com/embed?resid=CFD7A556C71EAC85%211967&authkey=%21ALSqLr-3n2QWsg0&width=360&height=667" width="360" height="667" />
+
+임베드 메뉴에서 원하는 이미지 크기(그림의 1번 박스)를 선택하고 HTML 태그 포함(그림의 2번 박스)에 체크한다. 그 결과 생성된 이미지 URL(그림의 3번 박스)을 복사한다.
+
+<img src="https://onedrive.live.com/embed?resid=CFD7A556C71EAC85%211968&authkey=%21AEhyG9G8CLTPZds&width=325&height=655" width="325" height="655" />
+
+## Step 3 : 포스팅 md 파일에 삽입하기
+복사한 이미지 임베드 URL을 포스팅 md 파일의 원하는 위치에 다음의 그림과 같이 삽입한다. 그 결과 포스팅에 이미지가 출력되는 것을 확인할 수 있다.
+
+<img src="https://onedrive.live.com/embed?resid=CFD7A556C71EAC85%211969&authkey=%21AAetjoEzYIoNNQ0&width=820&height=130" width="820" height="130" />
+
 # Github issue 이미지 첨부 활용하기
 작성 중
 
@@ -112,3 +132,4 @@ with open('image_md_codes_with_name.txt', 'w', encoding='UTF-8') as f:
 [^1]: `/assets/images/image_name.jpg`와 같은 상대주소를 사용하였다.
 [^2]: 최대 5GB까지는 허용한다고 되어있으며(2023년 정책 기준) 초과 시 경고 메일을 받을 수 있다고 한다. 자세한 내용은 [용량 관련 stackoverflow](https://stackoverflow.com/questions/38768454/repository-size-limits-for-github-com)와 [github 공식문서](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#repository-size-limits)에서 확인할 수 있다.
 [^4]: `Bulk share url shortener`를 사용하였다.
+[^google]: 2023년 10월 구글의 정책이 변경됨에 따라 본 방식은 사용이 불가해졌다.
