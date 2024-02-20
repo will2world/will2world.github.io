@@ -15,7 +15,7 @@ tags:
 2. 이미지를 일일이 업로드하고 각각에 대한 상대주소를 만들어서 포스팅 md 파일에 입력해줘야 한다. 그래서 귀찮고 번거롭다.
 
 이런 한계는 장기적으로 보았을 때 문제가 될 수 있을 듯 하다. 특히나 이미지 용량이 크다면 1번이 치명적이다. 다행히 구글링을 통해 외부 저장소에 이미지를 업로드하고 블로그에 연동할 수 있는 세 가지 방식을 알게 되었다. 세 가지 모두 별도의 비용을 지불할 필요없이 활용할 수 있는 방식이다. 그 세가지 방식은 다음과 같다.
-1. 구글 드라이브를 외부 저장소로 사용하기[^google]
+1. ~~구글 드라이브를 외부 저장소로 사용하기~~[^google]
 2. 원드라이브를 외부 저장소로 사용하기
 3. Github issue 이미지 첨부 활용하기
 
@@ -103,7 +103,7 @@ with open('image_md_codes_with_name.txt', 'w', encoding='UTF-8') as f:
 
 ![output](https://user-images.githubusercontent.com/53478216/216304054-c4e1b6c7-443d-4b36-b4db-a26009bdba91.png)
 
-<img src="https://onedrive.live.com/embed?resid=CFD7A556C71EAC85%211944&authkey=%21AFgTxPVj6R-np2Q&width=627&height=289" width="627" height="auto" />
+<img src="https://onedrive.live.com/embed?resid=CFD7A556C71EAC85%211944&authkey=%21AFgTxPVj6R-np2Q&width=627&height=289" width="100%" height="auto" />
 
 # 원드라이브를 외부 저장소로 사용하기
 ## Step 1 : 포스팅 폴더 생성 후 이미지 업로드하기
