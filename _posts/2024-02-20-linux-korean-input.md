@@ -3,7 +3,7 @@ title: 리눅스 정착기 시리즈 1 - 리눅스 정착기 시리즈의 시작
 toc: true
 toc_sticky: true
 categories:
-- blog
+- linux series
 tags:
 - linux
 ---
