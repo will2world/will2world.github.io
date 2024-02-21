@@ -21,7 +21,7 @@ tags:
 
 본 포스팅에서는 IBus를 사례로 한글 환경을 구축하는 방식을 설명한다.
 
-# IME 설치하기
+# IME 설치하고 설정하기
 ## IME들 중 원하는 것 선택하기
 IME는 한 가지만 있는 것이 아니다.
 그 목록은 [아치위키-IME 목록](https://wiki.archlinux.org/title/Input_method#List_of_available_input_method_editors) 중 Korean 항목을 보면 된다.
