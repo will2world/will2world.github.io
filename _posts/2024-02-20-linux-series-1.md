@@ -3,7 +3,7 @@ title: \[리눅스 정착기 시리즈\] 1. 리눅스 정착기 시리즈를 시
 toc: true
 toc_sticky: true
 categories:
-- linux series
+- linux_series
 tags:
 - linux
 ---
