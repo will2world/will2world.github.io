@@ -101,8 +101,17 @@ IBus의 경우 다음의 그림에서처럼 add 버튼을 눌러 `Hangul`로 검
 데비안 계열에서는 `fonts-noto-cjk`라는 이름으로, 아치 계열에서는 `noto-fonts-cjk`라는 이름으로 배포되고 있다.
 설치가 완료되면 한글 웹 페이지가 정상적으로 출력되는 것을 확인할 수 있다.
 
-# References
+# Wayland에서의 한글 문제
+본 포스팅은 wayland가 아니라 xorg를 사용하는 것을 전제로 작성하였다.
+xorg는 본 포스팅의 방식을 사용하면 한글을 문제없이 사용할 수 있다.
+
+wayland의 경우 한국인 개발자분이 개발하고 있는 Kime 입력기를 사용하면 웹 서핑이나 터미널 작업에서 한글 입력이 가능하다.
+그러나 vs code와 같이 electron에 기반한 특정 앱을 wayland native로 실행할 경우 한글 입력이 되지않는 문제가 여전히 존재한다(24년 2월 기준).
+사무실에서 리눅스를 사용하는 필자는 이런 불완전성으로 인해 현재 xorg를 사용하고 있다.
+
+# 참고자료
 - [Arch wiki - Localization/Korean](https://wiki.archlinux.org/title/Localization/Korean)
 - [Arch wiki - IBus](https://wiki.archlinux.org/title/IBus)
 - [Arch wiki - autostarting](https://wiki.archlinux.org/title/Autostarting)
 - [Arch wiki - input method](https://wiki.archlinux.org/title/Input_method)
+- [Kime](https://github.com/Riey/kime)
