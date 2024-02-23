@@ -15,7 +15,7 @@ tags:
 그래서 처음에는 `--help` argument를 사용해서 manual 페이지들을 찾아보거나 구글링을 통해 기본 기능과 세부 기능들에 대해서 공부를 수시로 해야 한다.
 그런데 메뉴얼을 읽는 것은 굉장한 에너지 소모를 요하는 작업이다.
 
-터미널을 실행하여 다음의 명령어를 실행하여 우리 모두가 다 알고있는 `ls` 명령어의 메뉴얼 페이지를 열어보라.
+터미널을 실행하고 다음의 명령어를 실행하여 우리 모두가 알고있는 `ls` 명령어의 메뉴얼 페이지를 열어보라.
 ```sh
 ls --help
 ```
@@ -173,16 +173,18 @@ or available locally via: info '(coreutils) ls invocation'
 
 # tl;dr
 tl;dr이라는 단어를 들어본 적이 있는가?
-궁금한 내용은 왠만하면 위키피디아에 나오니 한번 검색을 해보았다.
+없는 게 없는 위키피디아에 tldr을 검색해보았다.
 
 > TL;DR or tl;dr, short for "too long; didn't read", is internet slang indicating that a block of text has been ignored due to its length.[1] It is also used to introduce a summary of an online post or news article,[1] as well as an informal interjection.[2]
 >
 > Wikipedia - 'TL;DR'
 
 한마디로 `말이 너무 많아서 안읽었다` 뭐... 그런 뜻을 가진 인터넷 은어이다.
-이 인터넷 용어를 이름으로 채용한 패키지가 있다.
-`tldr`! 우리가 찾던 심플버전 메뉴얼 패키지이다.
+이 인터넷 용어를 이름으로 채택한 패키지가 있다.
+`tldr`!!!
+우리가 찾던 그 치트키이다.
 
+# tldr을 설치하는 방법
 설치는 개인이 사용하고있는 배포판의 패키지 매니저를 통해 설치할 수 있다.
 데비안 계열 리눅스 배포판에서는 다음의 명령어를 사용하여 설치하면 된다.
 ```sh
@@ -232,7 +234,7 @@ tldr ls
 tldr 덕분에 우리는 어떤 명령어든 모든 argument를 기억하고 있을 필요가 없다.
 
 자, 이제는 각자가 원하는 명령어들을 하나씩 검색해보며 실제 사용을 해볼 차례이다.
-한층 리눅스 생활이 편해진 것을 느낄 수 있을 것이다.
+한층 리눅스 생활이 편해지는 것을 느낄 수 있을 것이다.
 
 # 참고자료
 - [Wikipedia - TL;DR](https://en.wikipedia.org/wiki/TL;DR)
