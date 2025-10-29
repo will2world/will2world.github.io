@@ -1,0 +1,29 @@
+{{/* 사용: {{< latest limit=4 >}} */}}
+{{ $limit := .Get "limit" | default 4 }}
+
+{{/* 보여줄 섹션을 지정하세요 */}}
+{{ $sections := slice "linux-native-project" "oh-my-server" "as-researcher" }}
+
+{{ $pages := where .Site.RegularPages "Section" "in" $sections }}
+{{ $pages = first $limit (sort $pages "Date" "desc") }}
+
+<div class="mt-12">
+  <ul class="space-y-4">
+    {{ range $pages }}
+      {{/* li를 flex 컨테이너로 사용 */}}
+      <li class="flex items-baseline">
+
+        {{/* 날짜를 먼저 배치하여 정렬을 깔끔하게 함 */}}
+        <span class="text-sm text-gray-500 dark:text-gray-400 w-32 shrink-0">
+          {{ .Date.Format "2 Jan 2006" }}
+        </span>
+
+        {{/* 제목 링크 (text-l -> text-lg 수정) */}}
+        <a href="{{ .RelPermalink }}" style="color: inherit; text-decoration: none;" class="hover:underline hx:font-semibold hx:text-lg">
+          {{ .Title }}
+        </a>
+        
+      </li>
+    {{ end }}
+  </ul>
+</div>

@@ -6,13 +6,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	  <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
     
     
       
-        
       
     
+
     
   </channel>
 </rss>

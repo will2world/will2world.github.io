@@ -1,5 +1,5 @@
 # Hugo configuration file
-baseUrl: "https://willson.kr/"
+baseUrl: "https://yeongdo-roasters.kr/"
 title: "Yeongdo ROASTERS"
 
 # github pages connect
@@ -62,16 +62,16 @@ menu:
       weight: 5
       params:
         type: search
-    - name: GitHub
-      weight: 6
-      url: "https://github.com/will2world"
-      params:
-        icon: github
-    - name: Mail
-      weight: 6
-      url: "mailto:me@willson.kr"
-      params:
-        icon: mail
+    # - name: GitHub
+    #   weight: 6
+    #   url: "https://github.com/will2world"
+    #   params:
+    #     icon: github
+    # - name: Mail
+    #   weight: 6
+    #   url: "mailto:me@willson.kr"
+    #   params:
+    #     icon: mail
 
 
 params:

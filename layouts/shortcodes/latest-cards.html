@@ -1,0 +1,32 @@
+{{/* 사용: {{< latest-cards limit=4 >}} */}}
+{{ $limit := .Get "limit" | default 4 }}
+{{ $sections := slice "linux-native-project" "oh-my-server" "as-researcher" }}
+
+{{ $pages := where .Site.RegularPages "Section" "in" $sections }}
+{{ $pages = first $limit (sort $pages "Date" "desc") }}
+
+<section class="mt-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {{ range $pages }}
+      {{ $excerpt := .Summary }}
+      {{ if not $excerpt }}{{ $excerpt = .Params.description }}{{ end }}
+      {{ if not $excerpt }}{{ $excerpt = (truncate 40 .Plain) }}{{ end }}
+
+      <article class="rounded-xl border border-gray-200 dark:border-gray-700 p-4 hover:shadow-md transition">
+	<h3 class="mt-1 text-lg font-semibold leading-tight">
+	  <a href="{{ .RelPermalink }}" class="no-underline text-inherit hover:underline">{{ .Title }}</a>
+	</h3>
+        <div class="text-sm text-gray-500 dark:text-gray-400">
+          {{ .Date.Format "Jan 02, 2006" }} · {{ .ReadingTime }} min
+        </div>
+        <p class="mt-2 text-gray-700 dark:text-gray-300">
+          {{ $excerpt | plainify | truncate 100}}
+        </p>
+        <a href="{{ .RelPermalink }}" class="mt-3 inline-block text-sm text-primary-600 dark:text-primary-400 hover:underline">
+          Read more →
+        </a>
+      </article>
+    {{ end }}
+  </div>
+</section>
+

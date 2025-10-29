@@ -1,0 +1,12 @@
+{{- $width := .Get "width" | default "100%" -}}
+{{- $caption := .Get "caption" | default "" -}}
+
+<figure style="text-align: center;">
+  <img src="{{ .Get "image" }}" alt="{{ $caption }}" style="max-width: {{ $width }}; height: auto;" />
+  {{- if $caption }}
+    <figcaption style="font-size: 0.8em; color: #555;">
+	    {{ $caption | markdownify }}
+    </figcaption>
+  {{- end }}
+</figure>
+

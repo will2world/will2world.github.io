@@ -1,0 +1,31 @@
+<!-- medium-zoom 라이브러리 로드 -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" defer></script>
+
+<!-- 이미지 줌 초기화 -->
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    // 정확히 일치해야 제외할 경로들
+    const excludedPaths = ['/', '/about'];
+
+    // 현재 경로 추출
+    const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+
+    // 제외 경로에 해당하는지 확인
+    const isExactExcluded = excludedPaths.includes(currentPath);
+
+    if (!isExactExcluded) {
+      // article 내 모든 이미지 수집
+      const images = Array.from(document.querySelectorAll('article img'));
+
+      // 특정 src 포함 이미지를 제외
+      const filteredImages = images.filter(img => !img.src.includes('/images/logbook_avatar.png'));
+
+      // mediumZoom 적용
+      mediumZoom(filteredImages, {
+        background: 'rgba(0, 0, 0, 0.8)',
+        margin: 24,
+        scrollOffset: 300
+      });
+    }
+  });
+</script>

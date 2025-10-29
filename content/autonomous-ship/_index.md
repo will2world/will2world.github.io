@@ -9,7 +9,7 @@ cascade:
 weight: 2
 ---
 
-{{< callout type="important" emoji="💻" >}}
+{{< callout type="memo" emoji="💻" >}}
 Autonomous ship과 관련한 주제를 다룹니다.
 {{< /callout >}}
 

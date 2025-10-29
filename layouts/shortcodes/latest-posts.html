@@ -1,0 +1,60 @@
+{{/*
+  사용법:
+  - 기본 (blog, post 섹션에서 가져오기): {{< latest-posts >}}
+  - 특정 섹션들 지정: {{< latest-posts sections="logbook, linux-native-project" >}}
+  - 제목, 개수 지정: {{< latest-posts sections="logbook" limit=5 title="로그북 최신 글" >}}
+*/}}
+
+{{ $limit := .Get "limit" | default 3 }}
+{{ $title := .Get "title" | default "Latest Posts" }}
+{{ $readMore := (T "readMore") | default "Read more →" }}
+
+{{/* truncate 파라미터 추가 (기본값 120자, 0이면 제한 없음) */}}
+{{ $truncate := .Get "truncate" | default 100 }}
+
+{{/* sections 파라미터를 쉼표로 구분된 리스트로 변환, 기본값으로 blog와 post 설정 */}}
+{{ $sections := .Get "sections" | default "linux-native-project, as-researcher, oh-my-server" }}
+{{ $sections := split $sections "," }}
+
+{{/* 지정된 모든 섹션에 포함된 페이지들을 가져오기 */}}
+{{ $pages := where .Site.RegularPages "Section" "in" $sections }}
+{{ $pages = first $limit (sort $pages "Date" "desc") }}
+
+{{ if $pages }}
+<section class="hx:mt-12">
+  <h2 class="hx:mb-0 hx:text-3xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">
+    {{ $title }}
+  </h2>
+
+  <div class="hx:flex hx:flex-col hx:gap-8">
+    {{ range $pages }}
+      <article>
+        <h3 class="hx:font-semibold hx:text-2xl">
+          <a href="{{ .RelPermalink }}" style="color: inherit; text-decoration: none;">
+            {{ .Title }}
+          </a>
+        </h3>
+	   {{/* === 수정된 부분 시작 === */}}
+        <p class="hx:opacity-80 hx:mt-2 hx:leading-7">
+          {{ $description := partial "utils/page-description" . }}
+          {{ if and (gt $truncate 0) (gt (len $description) $truncate) }}
+            {{ $description | truncate $truncate }}
+          {{ else }}
+            {{ $description | safeHTML }}
+          {{ end }}
+        </p>
+        {{/* === 수정된 부분 끝 === */}}
+
+        <div class="hx:flex hx:items-center hx:gap-4 hx:mt-2">
+            <a class="hx:text-[color:hsl(var(--primary-hue),100%,50%)] hx:underline hx:underline-offset-2 hx:decoration-from-font" href="{{ .RelPermalink }}">
+              {{- $readMore -}}
+            </a>
+        </div>
+            <p class="hx:opacity-50 hx:text-sm hx:leading-7">
+              {{- partial "utils/format-date" .Date -}}
+            </p>
+      </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

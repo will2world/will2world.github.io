@@ -1,0 +1,11 @@
+{{- $currentPage := .Page -}}
+{{- $sectionName := $currentPage.Section -}}
+
+{{- $pages := site.GetPage $sectionName -}}
+{{- $children := $pages.RegularPages.ByDate.Reverse -}}
+
+<ol>
+  {{ range $children }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ end }}
+</ol>
