@@ -1,7 +1,7 @@
 ---
 date: '2025-10-28T00:11:17+09:00'
 toc: false
-title: 'Yeongdo ROASTERS'
+title: 'About'
 weight: 1
 ---
 

@@ -1,6 +1,6 @@
 # Hugo configuration file
 baseUrl: "https://yeongdo-roasters.kr/"
-title: "Yeongdo ROASTERS"
+title: "Yeongdo Roasters"
 
 # github pages connect
 # caches:
@@ -59,20 +59,9 @@ menu:
       pageRef: /autonomous-ship
       weight: 3
     - name: Search
-      weight: 5
+      weight: 4
       params:
         type: search
-    # - name: GitHub
-    #   weight: 6
-    #   url: "https://github.com/will2world"
-    #   params:
-    #     icon: github
-    # - name: Mail
-    #   weight: 6
-    #   url: "mailto:me@willson.kr"
-    #   params:
-    #     icon: mail
-
 
 params:
   navbar:
