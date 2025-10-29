@@ -1,0 +1,6 @@
+{{- $authors := .Page.Params.authors -}}
+{{- if $authors }}
+  <div class="not-prose pt-8 mt-8 text-sm text-muted-foreground" style="text-align: right;">
+     작성자&nbsp;:&nbsp;{{- delimit $authors ", " -}}
+  </div>
+{{- end }}
