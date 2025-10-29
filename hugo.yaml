@@ -2,6 +2,11 @@
 baseUrl: "https://willson.kr/"
 title: "Yeongdo ROASTERS"
 
+# github pages connect
+# caches:
+#   images:
+#     dir: :cacheDir/images
+
 enableRobotsTXT: true
 # Parse Git commit
 enableGitInfo: true
