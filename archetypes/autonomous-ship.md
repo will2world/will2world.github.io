@@ -4,7 +4,6 @@ draft: false
 toc: true
 comments: true
 tags:
-  - server
-  - selfhosted
+  - autonomous ship
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 ---
