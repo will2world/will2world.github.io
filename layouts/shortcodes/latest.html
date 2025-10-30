@@ -1,8 +1,8 @@
 {{/* 사용: {{< latest limit=4 >}} */}}
 {{ $limit := .Get "limit" | default 4 }}
 
-{{/* 보여줄 섹션을 지정하세요 */}}
-{{ $sections := slice "linux-native-project" "oh-my-server" "as-researcher" }}
+{{/* 보여줄 섹션을 지정하세요, 섹션 이름은 각 카테고리 주소명에 쓰인 이름을 사용. */}}
+{{ $sections := slice "nlp" "autonomous-ship" }}
 
 {{ $pages := where .Site.RegularPages "Section" "in" $sections }}
 {{ $pages = first $limit (sort $pages "Date" "desc") }}

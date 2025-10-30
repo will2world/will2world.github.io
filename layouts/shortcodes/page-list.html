@@ -1,11 +1,23 @@
-{{- $currentPage := .Page -}}
-{{- $sectionName := $currentPage.Section -}}
+{{- /* 현재 페이지 객체 */ -}}
+{{- $p := .Page -}}
 
-{{- $pages := site.GetPage $sectionName -}}
-{{- $children := $pages.RegularPages.ByDate.Reverse -}}
+{{- /* 기준 노드: 섹션이면 자기 자신, 아니면 소속 섹션 */ -}}
+{{- $node := cond $p.IsSection $p $p.CurrentSection -}}
 
+{{- if $node -}}
+  {{- /* 하위 트리의 모든 글(서브디렉터리 포함) 최신순 */ -}}
+  {{- $children := $node.RegularPagesRecursive.ByDate.Reverse -}}
+
+  {{- if gt (len $children) 0 -}}
 <ol>
-  {{ range $children }}
+  {{- range $children -}}
     <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-  {{ end }}
+  {{- end -}}
 </ol>
+  {{- else -}}
+<p>No posts under this section.</p>
+  {{- end -}}
+{{- else -}}
+<p>Section not found.</p>
+{{- end -}}
+
