@@ -3,25 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/about/</loc>
-    <lastmod>2025-10-29T17:15:43+09:00</lastmod>
+    <lastmod>2025-10-29T23:04:05+09:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/nlp/</loc>
     <lastmod>2025-10-29T16:09:16+09:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/autonomous-ship/</loc>
-    <lastmod>2025-10-29T17:15:43+09:00</lastmod>
+    <lastmod>2025-10-29T23:04:05+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/autonomous-ship/ais-series/</loc>
+    <lastmod>2025-10-30T11:19:17+09:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/autonomous-ship/</loc>
-    <lastmod>2025-10-29T19:36:47+09:00</lastmod>
+    <lastmod>2025-10-30T11:19:17+09:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-10-29T19:36:47+09:00</lastmod>
+    <lastmod>2025-10-30T11:19:17+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/autonomous-ship/test/</loc>
-    <lastmod>2025-10-29T19:36:47+09:00</lastmod>
+    <loc>http://localhost:1313/autonomous-ship/ais-series/what-is-ais/</loc>
+    <lastmod>2025-10-30T11:19:17+09:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-10-29T17:15:43+09:00</lastmod>
+    <lastmod>2025-10-29T23:04:05+09:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url>
