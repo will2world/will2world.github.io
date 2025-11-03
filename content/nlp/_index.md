@@ -13,5 +13,8 @@ weight: 2
 자연어 처리와 관련한 내용을 정리합니다.
 {{< /callout >}}
 
+## List of posts
+{{< page-list >}}
+
 ## Coming soon
 1. 자연어처리의 개념
