@@ -10,10 +10,14 @@ toc: false
 인공지능, 자연어 처리, 그리고 자율운항선박에 대해 설명합니다.  
 우리는 포스팅의 품질을 위해 글작성에 LLM을 사용하지 않습니다.
 
+## Latest posts
+{{< latest limit=10 >}}
+
 ## Categories
 - [About](/about)
 - [Natural language processing](/nlp)
 - [Autonomous ship](/autonomous-ship)
 
-## Latest posts
-{{< latest limit=10 >}}
+## Post statistics
+{{< pie-post-count topics="nlp, autonomous-ship" title=" " >}}
+

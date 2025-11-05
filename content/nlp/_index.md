@@ -10,11 +10,10 @@ weight: 2
 ---
 
 {{< callout type="important" emoji="💻" >}}
-자연어 처리와 관련한 내용을 정리합니다.
+자연어 처리와 관련한 내용을 다룹니다.
 {{< /callout >}}
 
 ## List of posts
 {{< page-list >}}
 
 ## Coming soon
-1. 자연어처리의 개념

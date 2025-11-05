@@ -1,0 +1,109 @@
+{{/* 
+  사용법:
+    {{< pie-posts topics="linux-native-project,oh-my-server,as-researcher" title="Posts by Topic (Home)" >}}
+*/}}
+
+{{ $topicsCSV := .Get "topics" | default "linux-native-project,as-researcher,oh-my-server" }}
+{{ $title     := .Get "title"  | default "Posts by Topic" }}
+{{ $topics    := split $topicsCSV "," }}
+
+{{ $lines := slice (printf "pie showData title %s\n" $title) }}
+{{ $total := 0 }}
+{{ range $topics }}
+  {{ $t := trim . " " }}
+  {{ $n := len (where site.RegularPages "Section" $t) }}
+  {{ $total = add $total $n }}
+  {{ $lines = $lines | append (printf "\"%s\" : %d\n" $t $n) }}
+{{ end }}
+{{ $body := delimit $lines "" }}
+
+{{ if gt $total 0 }}
+  {{ $id := printf "pie-%s" (md5 (printf "%s|%s" .Page.RelPermalink $title)) }}
+
+  <div id="{{ $id }}" class="mermaid" style=" width: 70%; margin: auto; display: block; " >{{ $body }}</div>
+
+  <script>
+    (function () {
+      const el = document.querySelector("#{{ $id }}");
+      if (!el) return;
+      el.dataset.original = el.innerHTML;
+
+      // -------- Mermaid 동적 로드 --------
+      function loadMermaid(cb) {
+        if (window.mermaid) return cb();
+        const s = document.createElement("script");
+        s.src = "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js";
+        s.onload = cb;
+        document.body.appendChild(s);
+      }
+
+      // -------- 테마 감지 및 팔레트 --------
+      const latte = {
+        textColor: "#4c4f69",
+        pie1: "#7287fd", pie2: "#df8e1d", pie3: "#40a02b",
+        pie4: "#1e66f5", pie5: "#ea76cb", pie6: "#04a5e5",
+        pie7: "#7287fd",
+      };
+
+      const mocha = {
+        textColor: "#cdd6f4",
+        pie1: "#b4befe", pie2: "#fab387", pie3: "#a6e3a1",
+        pie4: "#89b4fa", pie5: "#cba6f7", pie6: "#94e2d5",
+        pie7: "#f9e2af",
+      };
+
+      function getThemeConfig() {
+        const dark = document.documentElement.classList.contains("dark");
+        return {
+          startOnLoad: false,
+          theme: dark ? "dark" : "default",
+          themeVariables: dark ? mocha : latte
+        };
+      }
+
+	function fixAfterRender() {
+		// 남아 있는 텍스트 노드 제거
+		Array.from(el.childNodes).forEach(n => {
+		if (n.nodeType === Node.TEXT_NODE && n.textContent.trim()) n.remove();
+		});
+		// SVG 사이즈 강제: 꽉 차도록
+		const svg = el.querySelector("svg");
+		if (svg) {
+			svg.style.maxWidth = "100%";
+			svg.style.width = "100%";
+			svg.style.height = "auto";
+			svg.style.display = "block";
+			}
+	}
+
+      // -------- 렌더 함수 --------
+      function render() {
+        const cfg = getThemeConfig();
+        mermaid.initialize(cfg);
+        mermaid.run({ querySelector: "#{{ $id }}" });
+        requestAnimationFrame(fixAfterRender);
+      }
+
+      // -------- Mermaid 로드 후 실행 --------
+      loadMermaid(render);
+
+      // -------- 다크모드 토글 감시 --------
+      let t;
+      new MutationObserver(() => {
+        clearTimeout(t);
+        t = setTimeout(() => {
+          el.innerHTML = el.dataset.original;
+          el.removeAttribute("data-processed");
+          render();
+        }, 200);
+      }).observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["class"]
+      });
+    })();
+  </script>
+
+{{ else }}
+  <p>No posts found for topics: {{ range $i, $t := $topics }}{{ if $i }}, {{ end }}{{ trim $t " " }}{{ end }}.</p>
+{{ end }}
+
