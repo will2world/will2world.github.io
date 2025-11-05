@@ -6,16 +6,16 @@ toc: false
 comments: true
 cascade:
     type: docs
-weight: 3
+weight: 4
 ---
 
-{{< callout type="memo" emoji="💻" >}}
-선박과 AI에 관련한 주제를 다룹니다.
+{{< callout type="memo" emoji="🚢" >}}
+자율운항선박에 관련한 주제를 다룹니다.
 {{< /callout >}}
 
 ## List of posts
 {{< page-list >}}
 
 ## Coming soon
-1. AIS 데이터를 어디서 얻을 수 있을까?
-1. Autonomous ship이란?
+1. Maritime Autonomous Surface Ships (MASS)란?
+1. AIS 시각화하기
