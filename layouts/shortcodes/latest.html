@@ -2,7 +2,7 @@
 {{ $limit := .Get "limit" | default 4 }}
 
 {{/* 보여줄 섹션을 지정하세요, 섹션 이름은 각 카테고리 주소명에 쓰인 이름을 사용. */}}
-{{ $sections := slice "nlp" "autonomous-ship" }}
+{{ $sections := slice "nlp" "autonomous-ship" "ai" }}
 
 {{ $pages := where .Site.RegularPages "Section" "in" $sections }}
 {{ $pages = first $limit (sort $pages "Date" "desc") }}
