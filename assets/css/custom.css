@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400&display=swap');
+
+body {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-size: 1.2rem;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 폰트 크기 설정 */
+.content :where(p):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  line-height: 1.9rem;
+}
+
+.hx\:leading-7 {
+    line-height: 1.9rem;
+}
+
+/* footer의 copyright의 상단 패딩 제거 */
+.hextra-footer .hextra-max-footer-width[class*="hx:py-12"] {
+  padding-top: 10px !important;
+}
+
+/* 렌더링된 SVG 자체를 중앙 정렬 */
+pre.mermaid svg {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  max-width: 100%;
+}

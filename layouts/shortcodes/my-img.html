@@ -1,12 +1,57 @@
-{{- $width := .Get "width" | default "100%" -}}
+{{- /* image-figure.html (shortcode) */ -}}
+{{- $width   := .Get "width"   | default "100%" -}}
 {{- $caption := .Get "caption" | default "" -}}
+{{- $image   := .Get "image" -}}
 
-<figure style="text-align: center;">
-  <img src="{{ .Get "image" }}" alt="{{ $caption }}" style="max-width: {{ $width }}; height: auto;" />
+{{/* 색상 우선순위: shortcode 인자 → site.Params → 기본값 */}}
+{{- $lightColor := .Get "light" | default (site.Params.captionLight) | default "#555" -}}
+{{- $darkColor  := .Get "dark"  | default (site.Params.captionDark)  | default "#bbbbbb" -}}
+
+<figure class="img-figure" style="text-align:center;"> <img src="{{ $image }}" alt="{{ $caption }}" style="max-width:{{ $width }}; height:auto;" />
   {{- if $caption }}
-    <figcaption style="font-size: 0.8em; color: #555;">
-	    {{ $caption | markdownify }}
+    <figcaption class="img-caption" style="font-size:0.8em; color: {{ $lightColor }};">
+      {{ $caption | markdownify }}
     </figcaption>
   {{- end }}
 </figure>
+
+<script>
+(function () {
+  try {
+    var root = document.documentElement;
+    var fig  = document.currentScript.previousElementSibling;
+    if (!fig) return;
+    var cap  = fig.querySelector('.img-caption');
+    if (!cap) return;
+
+    var LIGHT = "{{ $lightColor }}";
+    var DARK  = "{{ $darkColor }}";
+
+    function isDarkMode() {
+      if (root.classList && root.classList.contains('dark')) return true;
+      var dt = root.getAttribute && root.getAttribute('data-theme');
+      if (dt === 'dark') return true;
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return true;
+      return false;
+    }
+
+    function applyColor() {
+      cap.style.color = isDarkMode() ? DARK : LIGHT;
+    }
+
+    applyColor();
+
+    /* 테마 토글 즉시 반영: html class/data-theme 변화를 감시 */
+    var mo = new MutationObserver(applyColor);
+    mo.observe(root, { attributes: true, attributeFilter: ['class', 'data-theme'] });
+
+    /* 시스템 다크모드 변경도 반영 */
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      if (mq.addEventListener) mq.addEventListener('change', applyColor);
+      else if (mq.addListener) mq.addListener(applyColor);
+    }
+  } catch (_) {}
+})();
+</script>
 
