@@ -1,7 +1,7 @@
 ---
 date: '2025-10-28T11:02:17+09:00'
 draft: false
-title: 'Autonomous Ship'
+title: 'Autonomous ship'
 toc: false
 comments: true
 cascade:
