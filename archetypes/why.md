@@ -5,10 +5,10 @@ comments: true
 authors:
   # - name: 손준호
   #   link: https://github.com/will2world
-  #   image: /images/junho.png
+  #   image: /images/jh.png
   # - name: 이정욱
   #   link: https://github.com/wjddnr9617
-  #   image: /images/logbook_avatar.png
+  #   image: /images/jw.png
 tags:
   #- 
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
