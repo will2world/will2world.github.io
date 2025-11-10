@@ -3,9 +3,10 @@ date: '2025-11-09T11:02:17+09:00'
 title: Why
 cascade:
     type: blog
-build: # 자동생성 메뉴에 표시되지 않도록 함.
-  list: never    
-  render: always # 페이지는 렌더링 (직접 링크로 접근 가능)
+weight: 5
+# build: # 자동생성 메뉴에 표시되지 않도록 함.
+#   list: never    
+#   render: always # 페이지는 렌더링 (직접 링크로 접근 가능)
 ---
 {{< callout type="warning" icon="sparkles" >}}
 
