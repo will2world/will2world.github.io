@@ -52,17 +52,20 @@ menu:
     - name: About
       pageRef: /about
       weight: 1
+    - name: Why
+      pageRef: /why
+      weight: 2
     - name: Artificial intelligence
       pageRef: /ai
-      weight: 2
+      weight: 3
     - name: Natural language processing
       pageRef: /nlp
-      weight: 3
+      weight: 4
     - name: Autonomous ship
       pageRef: /autonomous-ship
-      weight: 4
-    - name: Search
       weight: 5
+    - name: Search
+      weight: 6
       params:
         type: search
 
