@@ -25,7 +25,7 @@ LLM agent 또는 Agentic LLM 은 chat gpt의 말을 인용하자면 "환경과 �
 2025년 현재 이슈인 여러 Agent 중 ReAct를 살펴보겠다.
 
 ## ReAct : Reasoning And Acting 
-Princeton University과 Google Research, Brain team에서 게재한 논문은 `ReAct: Synergizing Reasoning And Acting in Language Models`으로 역시나 Language Model을 기반으로 한 것을 볼 수 있다. 
+Princeton University과 Google Research, Brain team에서 게재한 논문 `ReAct: Synergizing Reasoning And Acting in Language Models`은 역시나 Language Model을 기반으로 한 것을 볼 수 있다. 
 
 이 논문에서는 크게 두 가지의 모델과 비교를 하게 되는데 하나는 Reasoning Model, 하나는 Acting Model이다. 두 모델을 간략히 설명하고 넘어가겠다.
 
