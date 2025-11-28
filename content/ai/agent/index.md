@@ -30,7 +30,7 @@ Princeton University과 Google Research, Brain team에서 게재한 논문 `ReAc
 이 논문에서는 크게 두 가지의 모델과 비교를 하게 되는데 하나는 Reasoning Model, 하나는 Acting Model이다. 두 모델을 간략히 설명하고 넘어가겠다.
 
 ### **Reasoning**  
-CoT(Chain-of-Thought), Reasoning Model은 우리가 chat gpt한테 질문을 하면 뺑글뻉글 돌면서 thinking,,, 하는 그 과정을 말한다.  
+CoT(Chain-of-Thought), Reasoning Model은 우리가 chat gpt한테 질문을 하면 뺑글뺑글 돌면서 thinking,,, 하는 그 과정을 말한다.  
 이 과정은 단순하게 설명하자면 우리의 질문에 대한 답변을 즉시 생성해내던 방법에서 답변 생성 동시에 그 답변을 낸 이유까지 한번 더 생각하게 하는 것을 말한다.
 
 ```mermaid
